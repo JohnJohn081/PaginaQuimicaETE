@@ -1,0 +1,161 @@
+/*atualizado 20/06*/
+
+#timer-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+body {
+    background: url("../../imagens/fundo.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.quiz-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    margin: 10px;
+    padding: 20px 20px;
+    font-size: 1rem;
+    background-color: #d900ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.option-btn:hover {
+    background-color: #0400ff;
+}
+
+.correto {
+    background-color: #4CAF50 !important;
+}
+
+.errado {
+    background-color: #f44336 !important;
+}
+
+.option-btn {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.option-btn:hover {
+    background-color: #1d5dc3;
+    box-shadow: 0px 15px 20px rgba(46, 107, 229, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.option-btn:active {
+    transform: translateY(-1px);
+}
+
+/* CSS DA DICAS!*/
+
+#hint-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    display: inline-block;
+}
+
+#hint-btn:hover {
+    background-color: #e64a19;
+}
+
+#hint {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: yellow;
+}
+
+
+/* CSS DA NOTIFICAÇÃO*/
+.notification {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #2fff00;
+    color: #000000;
+    text-align: center;
+    border-radius: 10px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+.notification.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
