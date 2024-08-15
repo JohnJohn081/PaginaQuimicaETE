@@ -23,12 +23,12 @@ PROJETO TOTALMENTE ESTUDANTIL FEITO PARA FEIRA DE JOGOS DO ETE
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAj449IcN89Ga0ax__Soer1-mD7VVjd7oM",
-    authDomain: "ete-john.firebaseapp.com",
-    projectId: "ete-john",
-    storageBucket: "ete-john.appspot.com",
-    messagingSenderId: "242093850786",
-    appId: "1:242093850786:web:b41b6eb519a9b5668e17fb"
+    apiKey: "AIzaSyCOelUPm8hx-vFg0Cr5SjVv_mLrJcrn_Ys",
+    authDomain: "ete-john-quimica.firebaseapp.com",
+    projectId: "ete-john-quimica",
+    storageBucket: "ete-john-quimica.appspot.com",
+    messagingSenderId: "929948681469",
+    appId: "1:929948681469:web:8ace4d8e7063de3a1b2a94"
   };
 
 firebase.initializeApp(firebaseConfig);
