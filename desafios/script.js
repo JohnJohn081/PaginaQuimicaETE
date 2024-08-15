@@ -52,94 +52,94 @@ const db = firebase.firestore();
 // Respostas do quiz e o sistema que carrega ele, facilmente acessado pelo Aluno caso tenha conhecimento necessario para tal ato
 const questions = [
     {
-        question: "Qual é a principal fonte de energia para os seres vivos?",
-        options: ["A) Carboidratos", "B) Lipídios", "C) Proteínas", "D) Vitaminas"],
-        answer: "A",
-        hint: "É um macronutriente conhecido como açúcar."
+        "question": "Qual é o elemento químico mais abundante no universo?",
+        "options": ["A) Oxigênio", "B) Carbono", "C) Hidrogênio", "D) Nitrogênio"],
+        "answer": "C",
+        "hint": "É o elemento mais leve e o primeiro na tabela periódica."
     },
     {
-        question: "Quem propôs a teoria da evolução das espécies?",
-        options: ["A) Isaac Newton", "B) Albert Einstein", "C) Charles Darwin", "D) Galileo Galilei"],
-        answer: "C",
-        hint: "Foi um naturalista britânico."
+        "question": "Qual é o nome do processo que separa os componentes de uma mistura homogênea?",
+        "options": ["A) Decantação", "B) Destilação", "C) Filtração", "D) Peneiração"],
+        "answer": "B",
+        "hint": "É um método que envolve a vaporização e condensação dos componentes."
     },
     {
-        question: "O que é fotossíntese?",
-        options: ["A) Processo de respiração celular", "B) Formação de proteínas", "C) Quebra de açúcares", "D) Transformação de luz em energia química"],
-        answer: "D",
-        hint: "É um processo realizado pelas plantas."
+        "question": "O que é uma ligação iônica?",
+        "options": ["A) Ligação entre dois metais", "B) Ligação entre ametais", "C) Ligação entre átomos de oxigênio", "D) Ligação entre metais e ametais"],
+        "answer": "D",
+        "hint": "Ocorre entre átomos que possuem grande diferença de eletronegatividade."
     },
     {
-        question: "O que é uma célula?",
-        options: ["A) A menor unidade de um átomo", "B) A menor unidade funcional dos seres vivos", "C) Uma estrutura que apenas plantas possuem", "D) Um conjunto de tecidos"],
-        answer: "B",
-        hint: "É considerada a unidade básica da vida."
+        "question": "Qual é a definição de átomo?",
+        "options": ["A) Um agrupamento de prótons e nêutrons", "B) A menor partícula de uma substância que ainda retém as suas propriedades químicas", "C) Um conjunto de moléculas", "D) A unidade básica das células"],
+        "answer": "B",
+        "hint": "É a unidade fundamental da matéria."
     },
     {
-        question: "O que é um ecossistema?",
-        options: ["A) Um grupo de células", "B) Conjunto de seres vivos e o ambiente onde vivem", "C) Apenas os organismos de uma determinada espécie", "D) A união de diferentes órgãos"],
-        answer: "B",
-        hint: "Inclui tanto os organismos vivos quanto os componentes não vivos."
+        "question": "O que é uma reação química?",
+        "options": ["A) Uma mudança de estado físico", "B) Uma transformação de energia em matéria", "C) Um processo onde novas substâncias são formadas", "D) Uma mistura de substâncias sem alteração química"],
+        "answer": "C",
+        "hint": "Envolve a quebra e formação de ligações químicas."
     },
     {
-        question: "O que é a teoria da biogênese?",
-        options: ["A) Vida surge de matéria inanimada", "B) Vida surgiu em condições extremas ", "C) Vida surge de outros seres vivos", "D) Vida é resultado de intervenção divina"],
-        answer: "C",
-        hint: "Esta teoria foi comprovada por Louis Pasteur."
+        "question": "O que é uma solução?",
+        "options": ["A) Um composto puro", "B) Um tipo de elemento químico", "C) Uma mistura heterogênea", "D) Uma mistura homogênea de duas ou mais substâncias"],
+        "answer": "D",
+        "hint": "Pode ser sólida, líquida ou gasosa."
     },
     {
-        question: "O que é a teoria da abiogênese?",
-        options: ["A) Vida surge de outros seres vivos", "B) Vida é uma criação espontânea de matéria inanimada", "C) Vida evolui de formas simples para complexas", "D) Vida é um fenômeno recente"],
-        answer: "B",
-        hint: "Também é conhecida como geração espontânea."
+        "question": "O que é o pH?",
+        "options": ["A) Concentração de sais em uma solução", "B) Quantidade de matéria em uma solução", "C) Medida de acidez ou basicidade de uma solução", "D) Energia total de uma substância"],
+        "answer": "C",
+        "hint": "Determina se uma solução é ácida, neutra ou básica."
     },
     {
-        question: "Como eram as condições da Terra primitiva?",
-        options: ["A) Alta atividade vulcânica e raios", "B) Presença de organismos multicelulares", "C) Atmosfera rica em oxigênio", "D) Clima frio e estável"],
-        answer: "A",
-        hint: "As condições eram bastante inóspitas e instáveis."
+        "question": "O que ocorre durante a eletrólise da água?",
+        "options": ["A) Separação da água em oxigênio e hidrogênio", "B) Transformação da água em gelo", "C) Evaporação da água", "D) Neutralização da água"],
+        "answer": "A",
+        "hint": "É um processo que envolve corrente elétrica."
     },
     {
-        question: "Qual é a principal ideia da teoria de Oparin e Haldane?",
-        options: ["A) Vida surgiu de outro planeta", "B) Vida surgiu de compostos orgânicos simples em condições primitivas", "C) Vida sempre existiu", "D) Vida surgiu pela intervenção de seres superiores"],
-        answer: "B",
-        hint: "A teoria sugere a formação de moléculas orgânicas complexas a partir de simples."
+        "question": "Qual é a principal característica dos metais?",
+        "options": ["A) Não conduzem eletricidade", "B) São sempre líquidos", "C) Conduzem eletricidade e calor", "D) São gases à temperatura ambiente"],
+        "answer": "C",
+        "hint": "Eles possuem alta condutividade e brilho metálico."
     },
     {
-        question: "Qual experimento ajudou a comprovar a teoria da biogênese?",
-        options: ["A) Experimento de Redi", "B) Experimento de Miller-Urey", "C) Experimento de Spallanzani", "D) Experimento de Pasteur"],
-        answer: "D",
-        hint: "Este experimento utilizou frascos de pescoço de cisne."
+        "question": "Qual é a fórmula química da água?",
+        "options": ["A) CO₂", "B) O₂", "C) H₂", "D) H₂O"],
+        "answer": "D",
+        "hint": "É composta por dois átomos de hidrogênio e um de oxigênio."
     },
     {
-        question: "Qual foi o principal resultado do experimento de Miller-Urey?",
-        options: ["A) Formação de aminoácidos a partir de gases primitivos", "B) Criação de vida a partir de matéria inanimada", "C) Prova da biogênese", "D) Demonstrar a presença de oxigênio na Terra primitiva"],
-        answer: "A",
-        hint: "Este experimento simulou as condições da Terra primitiva."
+        "question": "O que são isótopos?",
+        "options": ["A) Átomos de elementos diferentes com o mesmo número de elétrons", "B) Átomos do mesmo elemento com diferente número de nêutrons", "C) Moléculas com diferentes números de prótons", "D) Moléculas com a mesma massa"],
+        "answer": "B",
+        "hint": "Eles têm o mesmo número de prótons, mas diferente massa atômica."
     },
     {
-        question: "Qual é o papel do DNA?",
-        options: ["A) Catalisar reações químicas", "B) Transportar oxigênio", "C) Armazenar informação genética", "D) Regular a pressão sanguínea"],
-        answer: "C",
-        hint: "Ele contém as instruções genéticas usadas no desenvolvimento e funcionamento de todos os organismos vivos."
+        "question": "Qual é o principal gás responsável pelo efeito estufa?",
+        "options": ["A) Oxigênio (O₂)", "B) Nitrogênio (N₂)", "C) Hélio (He)", "D) Dióxido de carbono (CO₂)"],
+        "answer": "D",
+        "hint": "É um gás liberado na queima de combustíveis fósseis."
     },
     {
-        question: "Qual é o principal componente da parede celular das plantas?",
-        options: ["A) Celulose", "B) Quitina", "C) Glicogênio", "D) Amido"],
-        answer: "A",
-        hint: "É um polissacarídeo que confere rigidez à parede celular."
+        "question": "O que é uma reação de oxidação?",
+        "options": ["A) Reação em que uma substância perde elétrons", "B) Reação que ocorre sem alteração de elétrons", "C) Reação que forma gás oxigênio", "D) Reação em que uma substância ganha elétrons"],
+        "answer": "A",
+        "hint": "Está frequentemente associada à corrosão de metais."
     },
     {
-        question: "O que propõe a teoria endossimbiótica?",
-        options: ["A) Evolução de órgãos complexos a partir de simples", "B) Origem da vida a partir de compostos orgânicos", "C) Origem das células eucarióticas a partir de procarióticas", "D) Evolução das espécies por seleção natural"],
-        answer: "C",
-        hint: "Sugere que organelas como mitocôndrias e cloroplastos eram organismos independentes."
+        "question": "O que é a tabela periódica?",
+        "options": ["A) Um gráfico que mostra as reações químicas", "B) Um sistema de classificação dos elementos químicos", "C) Uma lista de compostos químicos", "D) Um conjunto de fórmulas químicas"],
+        "answer": "B",
+        "hint": "Organiza os elementos com base em suas propriedades químicas."
     },
     {
-        question: "O que é uma mutação genética?",
-        options: ["A) Um tipo de seleção natural", "B) Uma mudança na sequência de DNA", "C) Um processo de divisão celular", "D) Um mecanismo de defesa imunológica"],
-        answer: "B",
-        hint: "Pode ocorrer de forma espontânea ou ser induzida por fatores externos."
+        "question": "O que é uma ligação covalente?",
+        "options": ["A) Transferência de elétrons entre átomos", "B) Compartilhamento de pares de elétrons entre átomos", "C) Ligação entre dois íons", "D) Ligação entre dois metais"],
+        "answer": "B",
+        "hint": "Ocorre principalmente entre átomos de ametais."
     }
     
     
