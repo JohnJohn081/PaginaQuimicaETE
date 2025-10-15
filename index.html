@@ -22,8 +22,6 @@ PROJETO TOTALMENTE ESTUDANTIL FEITO PARA FEIRA DE JOGOS DO ETE
 
 -->
 
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -35,7 +33,7 @@ PROJETO TOTALMENTE ESTUDANTIL FEITO PARA FEIRA DE JOGOS DO ETE
 </head>
 <body>
     <div id="home">
-        <h1>PROJETO ETE QUÍMICA</h1>
+        <h1>QUIMICANDO ETE</h1>
         <a href="index.html">Início</a>
         <a href="sobre.html">Sobre</a>
         <a href="dev.html">Desenvolvedores</a>
@@ -51,8 +49,7 @@ PROJETO TOTALMENTE ESTUDANTIL FEITO PARA FEIRA DE JOGOS DO ETE
                 <div class="user-box">
                     <select name="class" id="class" required="">
                         <optgroup label="TDS">
-                            <option value="1TDS A">1 TDS A</option>
-                            <option value="1TDS B">1 TDS B</option>
+                            <option value="1TDS A">1 TDS</option>
                             <option value="2TDS A">2 TDS A</option>
                             <option value="2TDS B">2 TDS B</option>
                             <option value="3TDS A">3 TDS A</option>
@@ -79,7 +76,7 @@ PROJETO TOTALMENTE ESTUDANTIL FEITO PARA FEIRA DE JOGOS DO ETE
                     </a>
                 </center>
                 <!--Ate então teste, não oficial!-->
-                <div class="materiaSelect">
+                <!--<div class="materiaSelect">
                     <label for="materias">Selecione uma Matéria:</label>
                     <select name="materias" id="materias">
                         <option value="">Selecione a materia</option>
@@ -87,7 +84,7 @@ PROJETO TOTALMENTE ESTUDANTIL FEITO PARA FEIRA DE JOGOS DO ETE
                         <option value="https://johnquimica.netlify.app/">Química</option>
                         <option value="https://johnfisica.netlify.app/">Física</option>
                     </select>
-                </div>
+                </div>-->
                 
             </form>
         </div>
@@ -103,12 +100,12 @@ PROJETO TOTALMENTE ESTUDANTIL FEITO PARA FEIRA DE JOGOS DO ETE
     <script src="scripts.js"></script>
     <script>
         // JavaScript para redirecionar ao selecionar uma opção
-        document.getElementById('materias').addEventListener('change', function() {
-            var url = this.value;
-            if (url) {
-                window.location.href = url; // Redireciona para o site selecionado
-            }
-        });
+        // document.getElementById('materias').addEventListener('change', function() {
+        //     var url = this.value;
+        //     if (url) {
+        //         window.location.href = url; // Redireciona para o site selecionado
+        //     }
+        // });
     </script>
 </body>
 </html>

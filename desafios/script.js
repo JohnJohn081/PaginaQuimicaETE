@@ -162,6 +162,70 @@ function loadQuestion() {
     startTimer();
 }
 
+// Função para criar efeito de confete
+function createConfetti() {
+    const container = document.getElementById('confetti-container');
+    container.style.display = 'block';
+    
+    // Cria múltiplos confetes
+    for (let i = 0; i < 100; i++) {
+        setTimeout(() => {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            
+            // Cores aleatórias
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            // Posição e animação aleatórias
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.top = '-10px';
+            confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+            
+            container.appendChild(confetti);
+            
+            // Animação de queda
+            const animation = confetti.animate([
+                { top: '-10px', transform: `rotate(0deg)` },
+                { top: '100vh', transform: `rotate(${Math.random() * 720}deg)` }
+            ], {
+                duration: 1000 + Math.random() * 2000,
+                easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
+            });
+            
+            // Remove o confete após a animação
+            animation.onfinish = () => {
+                confetti.remove();
+            };
+        }, i * 20);
+    }
+    
+    // Esconde o container após 3 segundos
+    setTimeout(() => {
+        container.style.display = 'none';
+        // Remove todos os confetes restantes
+        while (container.firstChild) {
+            container.firstChild.remove();
+        }
+    }, 3000);
+}
+
+// Função para mostrar animação de erro
+function showWrongAnimation() {
+    const wrongAnim = document.getElementById('wrong-animation');
+    wrongAnim.style.display = 'block';
+    
+    // Reinicia a animação
+    wrongAnim.style.animation = 'none';
+    void wrongAnim.offsetWidth; // Trigger reflow
+    wrongAnim.style.animation = 'wrongPulse 1s ease-out';
+    
+    // Esconde após a animação
+    setTimeout(() => {
+        wrongAnim.style.display = 'none';
+    }, 1000);
+}
+
 // Função para iniciar e atualizar o cronômetro a cada segundo
 function startTimer() {
     clearInterval(timer);
@@ -186,7 +250,6 @@ function startTimer() {
     }, 1000);
 }
 
-// função que verifica se a resposta é certa ou não
 function checkAnswer(answer) {
     const currentQuestion = questions[currentQuestionIndex];
     const selectedOption = document.querySelector('.option-btn:hover');
@@ -199,9 +262,11 @@ function checkAnswer(answer) {
             selectedOption.classList.add('correto');
             score += 1; // Adiciona pontos se a resposta estiver correta
             usouDica = 'false';
+            createConfetti(); // Animação de acerto
         } else {
             selectedOption.classList.add('errado');
             usouDica = 'false';
+            showWrongAnimation(); // Animação de erro
         }
 
         localStorage.setItem('userScore', score); 
